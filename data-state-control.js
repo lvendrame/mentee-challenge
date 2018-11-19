@@ -45,6 +45,12 @@
         }
     }
 
+    function setValue(prop, value) {
+        if (_cloneState) {
+            _cloneState[prop] = value;
+        }
+    }
+
     function setInputState(input, prop) {
         input.onchange = function (event) {
             _cloneState[prop] = event.target.value;
@@ -64,6 +70,7 @@
 
     window.dataStateControl = {
         setData: setData,
+        setValue: setValue,
         setCurrentState: setCurrentState,
         saveState: saveState,
         setInputState: setInputState,

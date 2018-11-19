@@ -40,13 +40,8 @@
             }
         }
 
-        function updateFragmentChildren(fragment, children) {
-            return children.reduce(updateFragmentChild,
-                fragment);
-        }
-
         function updateFragmentChild(fragment, child) {
-            if(Array.isArray(child)){
+            if (Array.isArray(child)) {
                 return updateFragmentChildren(fragment, child);
             }
 
@@ -58,8 +53,13 @@
             if (child) {
                 fragment.appendChild(child);
             }
-            
+
             return fragment;
+        }
+
+        function updateFragmentChildren(fragment, children) {
+            return children.reduce(updateFragmentChild,
+                fragment);
         }
 
         function createInput(type, options, attrs) {

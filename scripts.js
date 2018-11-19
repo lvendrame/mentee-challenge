@@ -155,6 +155,9 @@
         formDefinition.forEach(function(def){
             dataStateControl.setInputStateValue(def.el, def.name);
         });
+        if(!id){
+            dataStateControl.setValue('picture', "http://placehold.it/128x128");
+        }
     }
 
     function start(){
